@@ -1,11 +1,11 @@
 const express = require('express');//entering express library
 
-const userRoutes = require('./routes/user');
+const Routes = require('./routes/routes');
 const app = express();
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 
-app.use('/admin', userRoutes)
+app.use('/admin', Routes)
 
 app.listen(3000);
