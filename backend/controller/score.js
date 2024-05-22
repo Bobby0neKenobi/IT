@@ -4,7 +4,10 @@ exports.getScore = (req, res, next) =>{
     if(req.query.user_id == null){
         gameDb.query('SELECT * FROM game.SCORE ORDER BY score DESC').then(result => {
             res.status(200).json({"scores": result.rows});
-        }).catch(err => res.status(404).send('Invalid'));
+        }).catch(err => {
+            console.log(err);
+            res.status(404).send('Invalid');
+        });
     }else{
         gameDb.query('SELECT * FROM game.SCORE WHERE user_id = $1', [req.query.user_id]).then(result => {
             if(result.rowCount == 0){
