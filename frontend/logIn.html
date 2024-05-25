@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log in page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="jQuery.js"></script>
+    <script src="logInScript.js"></script>
+</head>
+
+<body>
+    <h1>Space Invaders</h1>
+    <nav>
+        <ul class="menu">
+            <div>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signIn.html">Sign in</a></li>
+            </div>
+        </ul>
+    </nav>
+    <h2>Log in</h2>
+    <div class="contentBox">
+        <div>
+            <label for="uname">Username:</label><br />
+            <input type="text" id="uname"><br />
+            <label for="password">Password:</label><br />
+            <input type="password" id="password"><br /><br />
+        </div>
+        <p id = "errorMessage"></p>
+        <button type="button" onclick="login()">Log in</button>
+        <p>If you do not have an account,<a href="signIn.html">sign in</a>.</p>
+    </div>
+</body>
+
+</html>
