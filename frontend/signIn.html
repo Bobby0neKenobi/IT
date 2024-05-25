@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Log in page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="jQuery.js"></script>
+    <script src="signInScript.js"></script>
+</head>
+
+<body>
+    <h1>Space Invaders</h1>
+    <nav>
+        <ul class="menu">
+            <div>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="logIn.html">Log in</a></li>
+            </div>
+        </ul>
+    </nav>
+    <h2>Sign in</h2>
+    <div class="contentBox" id="signInForm">
+        <div>
+            <label for="fname">First name:</label><br />
+            <input type="text" id="fname"><br />
+            <label for="lname">Last name:</label><br />
+            <input type="text" id="lname"><br />
+            <label for="uname">Username:</label><br />
+            <input type="text" id="uname"><br />
+            <label for="password">Password:</label><br />
+            <input type="password" id="password"><br />
+            <label for="confPassword">Confirm password:</label><br />
+            <input type="password" id="confPassword"><br />
+            <p id="passwordValidation"></p><br /><br />
+        </div>
+        <p id = "errorMessage"></p>
+        <button type="button" onclick="signin()">Sign in</button>
+        <p>If you already have an account,<a href="logIn.html">log in</a>.</p>
+    </div>
+    <div id="signInConfirmed">
+        <p>Sign in was sucsessful. Now you can <a href="logIn.html">log in</a> and enjoy the game.</p>
+    </div>
+</body>
+
+</html>

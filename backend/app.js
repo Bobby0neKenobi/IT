@@ -7,5 +7,5 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 app.use('/admin', Routes)
-
+app.use(express.static('../frontend'))
 app.listen(3000);
