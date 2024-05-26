@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log in page</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="jQuery.js"></script>
+        <script src="profileEditorScript.js"></script>
+        <link rel="stylesheet" href="./profile.css">
+    </head>
+
+    <body>
+        <h1>Space Invaders</h1>
+        <nav>
+            <ul>
+                <div class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="javascript:logOut()">Log Out</a></li>
+                </div>
+            </ul>
+        </nav>
+        <h2>Profile Editor</h2>
+        <div class="contentBox">
+            <div>
+                <label for="userName" class="label">User Name:</label><br />
+                <input type="text" id="userName"><br />
+                <label for="password" class="label">Password:</label><br />
+                <input type="password" id="password"><br />
+                <label for="confPassword" class="label">Confirm password:</label><br />
+                <input type="password" id="confPassword"><br />
+                <p id="passwordValidation"></p>
+                <label for="firstName" class="label">First Name:</label><br />
+                <input type="text" id="firstName"><br />
+                <label for="lastName" class="label">Last Name:</label><br />
+                <input type="text" id="lastName"><br /><br />
+            </div>
+            <p id = "errorMessage"></p>
+            <button type="button" onclick="updateProfile()">Update Profile</button>
+        </div>
+    </body>
+</html>
