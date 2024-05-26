@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script src="jQuery.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="scoreboard.css">
+    <title>Score Board</title>
+  </head>
+  <body>
+    <h1>Score Board</h1>
+    <nav>
+        <ul>
+            <div class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="javascript:logOut()">Log Out</a></li>
+                <li><a href="./game/game.html">Game</a></li>
+            </div>
+            <div id="loggedInUser">
+                <img class="userImage" alt="user" src="user.png" />
+                <p id="username"></p>
+            </div>
+        </ul>
+    </nav>
+    <div id = "mainBody">
+      <table id="table">
+      </table>
+    </div>
+    <script src="scoreboard.js"></script>
+  </body>
+</html>
