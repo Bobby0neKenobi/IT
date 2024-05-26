@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game</title>
+        <link rel="stylesheet" href="./game.css">
+    </head>
+    <body>
+        <div style = "position: relative;" id = 'parentDiv'>
+            <p id="scoreContainer" style = "position: absolute; z-index: 10; color: white; left: 10px; top: 10px; margin: 0; display: none;">
+            <span>Score:</span> <span id = "scoreEl">0</span></p>
+            <canvas></canvas>
+            <div id="startScreen" style="position: absolute; top:0; right:0; left:0; bottom:0; background:url('./img/startScreenBackground.png'); z-index:20; background-size: contain; background-repeat: no-repeat;display: flex; align-items: center; justify-content: center;">
+                <div style="text-align: center;">
+                    <h1 style="color:white;">Space Invaders</h1>
+                    <div id="startButton" style="cursor: pointer; position: relative; display: inline-block;">
+                        <img src="./img/button.png" alt="Start Button">
+                        <span style="position: absolute; color: white; top: 50%; transform: translate(-50%, -50%); left: 50%;">Start</span>
+                    </div>
+                    </br>
+                    <div id="exitButton" style="cursor: pointer; position: relative; display: inline-block;">
+                        <img src="./img/button.png" alt="Exit Button">
+                        <span style="position: absolute; color: white; top: 50%; transform: translate(-50%, -50%); left: 50%;">Exit</span>
+                    </div>
+                    </br>
+                    <div id="Score" style="cursor: pointer; position: relative; display: inline-block;">
+                        <img src="./img/button.png" alt="Score Board">
+                        <span style="position: absolute; color: white; top: 50%; transform: translate(-50%, -50%); left: 50%;">Score Board</span>
+                    </div>
+                </div>
+            </div>
+            <div id="restartScreen" style="position: absolute; top:0; right:0; left:0; bottom:0; background:url('./img/startScreenBackground.png'); z-index:20; background-size: contain; background-repeat: no-repeat;display: none; align-items: center; justify-content: center;">
+                <div style="text-align: center;">
+                    <h1 style="color:white; font-size:24;">Game Over</h1>
+                    <h1 id="finalScore" style='color:white; margin:0; font-size:45;'></h1>
+                    <p stylw="color:white; margin-top:0;">Points</p>
+                    <div id="restartButton" style="cursor: pointer; position: relative; display: inline-block;">
+                        <img src="./img/button.png" alt="Restart Button">
+                        <span style="position: absolute; color: white; top: 50%; transform: translate(-50%, -50%); left: 50%;">Restart</span>
+                    </div>
+                    </br>
+                    <div id="exitButton2" style="cursor: pointer; position: relative; display: inline-block;">
+                        <img src="./img/button.png" alt="Exit Button">
+                        <span style="position: absolute; color: white; top: 50%; transform: translate(-50%, -50%); left: 50%;">Exit</span>
+                    </div>
+                    </br>
+                    <div id="Score2" style="cursor: pointer; position: relative; display: inline-block;">
+                        <img src="./img/button.png" alt="Score Board">
+                        <span style="position: absolute; color: white; top: 50%; transform: translate(-50%, -50%); left: 50%;">Score Board</span>
+                    </div>
+                </div>
+            </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src = './audio.js'></script>
+
+        <script src = './js/functions/functions.js'></script>
+
+        <script src = './js/classes/Player.js'></script>
+        <script src = './js/classes/Invader.js'></script>
+        <script src = './js/classes/InvaderProjectile.js'></script>
+        <script src = './js/classes/Bomb.js'></script>
+        <script src = './js/classes/Particle.js'></script>
+        <script src = './js/classes/Projectiles.js'></script>
+        <script src = './js/classes/PowerUp.js'></script>
+        <script src = './js/classes/Grid.js'></script>
+        <script src = './game.js'></script>
+        </div>
+    </body>
+</html>
