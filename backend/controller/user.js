@@ -15,7 +15,11 @@ exports.getUserData = (req, res, next) => {
         });
     }else if(req.query.user_name != null && req.query.password != null){
         gameDb.query('SELECT id, user_name, first_name, last_name, created_date FROM game.USER WHERE user_name=$1 AND password=$2', [req.query.user_name, jsMD5(req.query.password)]).then(result => {
-            res.status(200).json({user:[result.rows[0]]});
+            if (result.rowCount == 1) {
+                res.status(200).json(result.rows[0]);
+            } else {
+                res.status(404).send("Invalid username or password");
+            }
         }).catch(error => {
             res.status(404).send("User not found!");
             console.log(error);

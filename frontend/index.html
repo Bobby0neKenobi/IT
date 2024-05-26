@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="jQuery.js"></script>
+    <script src="indexScript.js"></script>
+</head>
+
+<body>
+    <h1>Space Invaders</h1>
+    <nav>
+        <ul>
+            <div class="menu">
+                <li id="menuSignin"><a href="signIn.html">Sign in</a></li>
+                <li id="menuLogin"><a href="logIn.html">Log in</a></li>
+                <li id="menuProfile"><a href="profile.html">Profile</a></li>
+                <li id="menuLogOut"><a href="javascript:logOut()">Log out</a></li>
+            </div>
+            <div id="loggedInUser">
+                <img class="userImage" alt="user" src="user.png" />
+                <p id="username"></p>
+            </div>
+        </ul>
+    </nav>
+    <div class="contentBox">
+        <h2>About Space Invaders</h2>
+        <p> Space Invaders is a classic arcade game that took the world by storm in 1978. Developed by Tomohiro
+            Nishikado of Taito Corporation in Japan, it's widely considered to be one of the most influential video
+            games of all time. Inspired by films like "War of the Worlds" and "The Andromeda Strain," Nishikado aimed to
+            create a game with a sense of tension and achievement. He combined elements of target shooting games with
+            the ability to destroy targets one by one, similar to the game Breakout.</p>
+        <h2>Controls</h2>
+        <p>Use 'A' to go left. Use 'D' to go right. Use space to shoot. When you hit an enemy you get 100 points. The
+            big red orbs are explosives, which destroy the enemies in big quantaties, but you resive only 50 points for
+            each destroyed invador. The small yellow orbs are machine gun power up it lasts for some time after that it
+            stops!</p>
+        <img src="spaceInvaders.jpeg" alt="Space Invaders" width="300px" height="300px">
+        <button id="button1" type="button">Game</button>
+    </div>
+</body>
+
+</html>

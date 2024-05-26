@@ -1,0 +1,51 @@
+body
+{
+    background-color: rgb(155, 196, 188);
+    font-family: monospace;
+    
+}
+
+h1
+{
+    background-color:rgb(55, 59, 50);
+    color:white;
+    display: flex;
+    justify-content: center;
+}
+
+#username
+{
+    font-size:xx-large;
+    display: flex;
+    justify-content: center;
+}
+
+#userImage
+{
+    border-style: solid;
+    border-color: black;
+}
+
+#Image
+{
+    display:flex;
+    justify-content:center;
+}
+
+p
+{
+    background-color:  rgb(55, 59, 50);
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+#placeonleaderboard
+{
+    color:white;
+    text-decoration: none;
+    font-size:large;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
