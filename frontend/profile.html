@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="jQuery.js"></script>
+        <script src="profileScript.js"></script>
+    </head>
+
+    <body>
+        <h1>Space Invaders</h1>
+        <nav>
+            <ul>
+                <div class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="javascript:logOut()">Log Out</a></li>
+                </div>
+            </ul>
+        </nav>
+        <h2>Profile</h2>
+        <div class="contentBox">
+            <div id="profileDetails"></div>
+            <p id = "errorMessage"></p>
+            <br />
+            <button type="button" onclick="window.location.href = 'profileEditor.html'">Edit Profile</button>
+        </div>
+    </body>
+</html>
