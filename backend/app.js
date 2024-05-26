@@ -12,12 +12,14 @@ const httpsOptions = {
     cert: fs.readFileSync('./cert/server.cert')
 };
 
-const server = https.createServer(httpsOptions, app);  
+const httpsServer = https.createServer(httpsOptions, app);  
 
 app.use(cors());
 
 app.use(bodyParser.json());
 
-app.use('/admin', Routes)
-app.use(express.static('../frontend'))
-app.listen(3000);
+app.use('/admin', Routes);
+
+httpsServer.listen(443, () => {
+    console.log('HTTPS server listening on port 443');
+  });

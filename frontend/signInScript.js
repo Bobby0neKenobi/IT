@@ -25,7 +25,7 @@ function signin() {
         "password" : password
     }
     $.post({
-        "url": "/admin/user",
+        "url": "https://localhost/admin/user",
         "contentType" : 'application/json',
         "data": JSON.stringify(data),
         "success" : function(responseData) {

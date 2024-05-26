@@ -42,10 +42,10 @@ exports.postUserData = (req, res, next) => {
 };
 
 exports.putUserData = (req, res, next) => {
-    if(req.body.id == null || req.body.password == null || req.body.first_name == null || req.body.last_name == null){
+    if(req.body.id == null || req.body.user_name == null || req.body.password == null || req.body.first_name == null || req.body.last_name == null){
         res.status(400).send("Invalid request!");
     }
-    gameDb.query('UPDATE game.USER SET password=$1, first_name=$2, last_name=$3 WHERE id=$4', [jsMD5(req.body.password), req.body.first_name, req.body.last_name, req.body.id]).then(result => {
+    gameDb.query('UPDATE game.USER SET user_name=$1, password=$2, first_name=$3, last_name=$4 WHERE id=$5', [req.body.user_name, jsMD5(req.body.password), req.body.first_name, req.body.last_name, req.body.id]).then(result => {
         if (result.rowCount == 1) {
             res.status(200).send();
         } else {

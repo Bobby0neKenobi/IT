@@ -46,6 +46,7 @@ let msPrev = window.performance.now(); //previous miliseconds
 //main process module
 //restart all lets
 function init() {
+  spawnBuffer = 500;
   player = new Player();
   projectiles = [];
   grids = [];
@@ -110,13 +111,13 @@ function endGame() {
     document.querySelector("#restartScreen").style.display = "flex"; //show restart screen
     
     document.querySelector("#finalScore").innerHTML = score; //show final score
-    console.log(new URLSearchParams(window.location.search).get("user_id"));
-    fetch('https://localhost:3000/admin/score', {
+
+    fetch('https://localhost/admin/score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({"score": score, "user_id": new URLSearchParams(window.location.search).get("user_id")})
+      body: JSON.stringify({"score": score, "user_id": JSON.parse(sessionStorage.getItem("loggedInUser")).id})
     });
-  }, 1500);
+  }, 500);
 
   createParticles({
     //player explodes
@@ -466,6 +467,7 @@ function animate() {
   }
 
   frames++;
+  console.log(frames);
 }
 
 document.querySelector("#startButton").addEventListener("click", () => {
@@ -498,7 +500,7 @@ document.querySelector("#exitButton").addEventListener("click", () => {
   if (audio.select.volume === 0) {
     audio.select.splice(i, 1);
   }
-  window.location.href = '../homepage.html';
+  window.location.href = '../index.html';
 });
 
 document.querySelector("#exitButton2").addEventListener("click", () => {
@@ -507,7 +509,7 @@ document.querySelector("#exitButton2").addEventListener("click", () => {
   if (audio.select.volume === 0) {
     audio.select.splice(i, 1);
   }
-  window.location.href = '../homepage.html';
+  window.location.href = '../index.html';
 });
 
 document.querySelector("#Score").addEventListener("click", () => {

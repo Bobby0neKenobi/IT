@@ -7,7 +7,7 @@ function login() {
     let username = $('#uname').val();
     let password = $('#password').val();
     $.get({
-        "url": "/admin/user" ,
+        "url": "https://localhost/admin/user" ,
         "data": {
             "user_name": username,
             "password": password

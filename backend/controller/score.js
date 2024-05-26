@@ -13,7 +13,7 @@ exports.getScore = (req, res, next) =>{
                      '  JOIN game.score s ON    ' +
                      '    s.user_id = u.id      ' +
                      'ORDER BY                  ' +
-                     '  s.score ASC').then(result => {
+                     '  s.score DESC').then(result => {
             res.status(200).json({"scores": result.rows});
         }).catch(err => {
             console.log(err);
@@ -30,12 +30,21 @@ exports.getScore = (req, res, next) =>{
     }
 };
 
-exports.postScore = (req, res, next) => {
+exports.postScore = async (req, res, next) => {
+    let currentScore;
+
     if(req.body.score == null || req.body.user_id == null){
         res.status(400).send("Bad request")
     }
-    if(!(gameDb.query('SELECT * FROM game.SCORE WHERE user_id = $1', [req.body.user_id]))){
-        gameDb.query('INSERT INTO game.SCORE score VALUES $1 WHERE user_id = $2', [req.body.score, req.body.user_id]).then(result => {
+
+    try{
+        currentScore = await gameDb.query('SELECT * FROM game.SCORE WHERE user_id = $1', [req.body.user_id]);
+    }catch{
+        console.error('Error data:', error);
+    }
+
+    if (currentScore.rowCount == 0) {
+        gameDb.query('INSERT INTO game.SCORE (score, user_id) VALUES ($1, $2)', [req.body.score, req.body.user_id]).then(result => {
             res.status(200).json(result.rows);
         }).catch(err => {
             res.status(404).send("Invalid");
@@ -47,4 +56,19 @@ exports.postScore = (req, res, next) => {
             res.status(404).send("Invalid");
         });
     }
+    
+    // console.log(req);
+    // if(!(gameDb.query('SELECT * FROM game.SCORE WHERE user_id = $1', [req.body.user_id]))){
+    //     gameDb.query('INSERT INTO game.SCORE score VALUES $1 WHERE user_id = $2', [req.body.score, req.body.user_id]).then(result => {
+    //         res.status(200).json(result.rows);
+    //     }).catch(err => {
+    //         res.status(404).send("Invalid");
+    //     });
+    // }else{
+    //     gameDb.query('UPDATE game.SCORE SET score = $1 WHERE user_id = $2 AND score < $3', [req.body.score, req.body.user_id, req.body.score]).then(result => {
+    //         res.status(200).json(result.rows);
+    //     }).catch(error => {
+    //         res.status(404).send("Invalid");
+    //     });
+    // }
 };

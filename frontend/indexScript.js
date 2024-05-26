@@ -22,6 +22,7 @@ function adjustElementVisibility() {
         $("#loggedInUser").hide();
         $("#menuSignin").show();
         $("#menuLogin").show();
+        $("#startGame").hide();
     }
     else {
         $("#menuSignin").hide();
@@ -30,6 +31,7 @@ function adjustElementVisibility() {
         $("#menuProfile").show();
         $("#username").text(userInfo.user_name);
         $("#loggedInUser").show();
+        $("#startGame").show();
     }
 }
 
